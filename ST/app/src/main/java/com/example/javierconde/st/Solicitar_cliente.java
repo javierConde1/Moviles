@@ -4,13 +4,22 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.Toast;
 
 public class Solicitar_cliente extends AppCompatActivity {
-    CheckBox cbx1, cbx2, cbx3, cbx4, cbx5, cbx6, cbx7;
-    EditText et_desc;
+    private CheckBox cbx1, cbx2, cbx3, cbx4, cbx5, cbx6, cbx7;
+    private EditText et_desc;
+    private Button btnSalir_cliente;
+    private RadioButton rbtnAlta, rbtnMedia, rbtnBaja;
     Intent inEstatus;
+
+    private String sDesc = "";
+    private String sPrioridad;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,30 +33,66 @@ public class Solicitar_cliente extends AppCompatActivity {
         cbx6 = findViewById(R.id.cbx6);
         cbx7 = findViewById(R.id.cbx7);
         et_desc = findViewById(R.id.et_desc);
-        inEstatus = new Intent(this, Estatus_cliente.class);
+        btnSalir_cliente = findViewById(R.id.btnSalir_cliente);
+        rbtnAlta = findViewById(R.id.rbtnAlta);
+        rbtnMedia = findViewById(R.id.rbtnMedia);
+        rbtnBaja = findViewById(R.id.rbtnBaja);
+        inEstatus = new Intent(this, Menu_cliente.class);
+
+        btnSalir_cliente.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(inEstatus);
+            }
+        });
     }
     public void solicitar(View view) {
-        /*boolean bPila = cbx1.isChecked();
-        boolean bBateria = cbx2.isChecked();
-        boolean bContra = cbx3.isChecked();
-        boolean bCerca = cbx4.isChecked();
-        boolean bCerebro = cbx5.isChecked();
-        boolean bCableado = cbx6.isChecked();
-        boolean bSensores = cbx7.isChecked();
-        String sDescripcion = et_desc.getText().toString();
+        sDesc += et_desc.getText();
 
-        Bundle bBundle = new Bundle();
-        bBundle.putBoolean("PILA",bPila);
-        bBundle.putBoolean("BATERIA",bBateria);
-        bBundle.putBoolean("CONTRA",bContra);
-        bBundle.putBoolean("CERCA",bCerca);
-        bBundle.putBoolean("CEREBRO",bCerebro);
-        bBundle.putBoolean("CABLEADO",bCableado);
-        bBundle.putBoolean("SENSORES",bSensores);
-        bBundle.putString("DESCRIPCION", sDescripcion);
+        if(cbx1.isChecked() || cbx2.isChecked() || cbx3.isChecked() || cbx4.isChecked() || cbx5.isChecked() || cbx6.isChecked() || cbx7.isChecked()){
+            sDesc += ". Fallos en: ";
+        }
 
-        inEstatus.putExtras(bBundle);*/
-        startActivity(inEstatus);
+        if(cbx1.isChecked()){
+            sDesc += "- Panel ";
+        }
+        if(cbx2.isChecked()){
+            sDesc += "- Bateria ";
+        }
+        if(cbx3.isChecked()){
+            sDesc += "- Contra chapa ";
+        }
+        if(cbx4.isChecked()){
+            sDesc += "- Cerca electrica ";
+        }
+        if(cbx5.isChecked()){
+            sDesc += "- Cerebro ";
+        }
+        if(cbx6.isChecked()){
+            sDesc += "- Cableado ";
+        }
+        if(cbx7.isChecked()){
+            sDesc += "- Sensores ";
+        }
+
+        if(!rbtnAlta.isChecked() && !rbtnMedia.isChecked() && !rbtnBaja.isChecked()){
+            Toast.makeText(Solicitar_cliente.this, "Seleccione un nivel de prioridad", Toast.LENGTH_SHORT).show();
+        }else{
+            if(rbtnAlta.isChecked()){
+               sPrioridad = "alta";
+            }else if(rbtnMedia.isChecked()){
+                sPrioridad = "media";
+            }else if(rbtnBaja.isChecked()){
+                sPrioridad = "baja";
+            }
+            Toast.makeText(Solicitar_cliente.this, "REPORTE REALIZADO CON EXITO", Toast.LENGTH_LONG).show();
+            startActivity(inEstatus);
+        }
+
+
+        //EN LA VARIABLE sDesc ESTA GUARDADO LO QUE SE PONDRA EN EL REGISTRO DESCRIPCION
+        //EN LA VARIABLE sPrioridad ESTA GUARDADO LO QUE SE PONDRA EN EL REGISTRO PRIORIDAD
+
     }
 
 }

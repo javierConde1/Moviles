@@ -42,7 +42,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="Iniciar"
-        android:background="#FF0000"
+        android:background="@color/colorPrimaryDark"
         />
 
 </LinearLayout>

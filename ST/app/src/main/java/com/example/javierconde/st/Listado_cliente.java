@@ -7,6 +7,7 @@ public class Listado_cliente {
     public String fecha;
     public String prioridad;
     public String domicilio;
+
     public Listado_cliente() {}
 
     public Listado_cliente(int no_orden, String estado, String fecha, String prioridad, String domicilio) {

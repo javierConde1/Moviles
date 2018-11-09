@@ -20,7 +20,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:paddingTop="15dp"
-                android:text="Ingresa lo que falla."
+                android:text="¿Cual es tu fallo?"
                 android:textColor="@color/colorPrimary"
                 android:textSize="18sp" />
 
@@ -28,49 +28,80 @@
                 android:id="@+id/cbx1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Panel." />
-
+                android:text="Panel" />
             <CheckBox
                 android:id="@+id/cbx2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Bateria." />
+                android:text="Bateria" />
 
             <CheckBox
                 android:id="@+id/cbx3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Contra chapa." />
+                android:text="Contra chapa" />
 
             <CheckBox
                 android:id="@+id/cbx4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Cerca electrica." />
+                android:text="Cerca electrica" />
 
             <CheckBox
                 android:id="@+id/cbx5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Cerebro." />
+                android:text="Cerebro" />
 
             <CheckBox
                 android:id="@+id/cbx6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Cableado." />
+                android:text="Cableado" />
 
             <CheckBox
                 android:id="@+id/cbx7"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Sensores." />
+                android:text="Sensores" />
+
+            <TextView
+                android:id="@+id/textViewX"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="15dp"
+                android:text="Seleccione la prioridad"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18sp" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RadioButton
+                    android:id="@+id/rbtnAlta"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Alta"/>
+
+                <RadioButton
+                    android:id="@+id/rbtnMedia"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Media"/>
+
+                <RadioButton
+                    android:id="@+id/rbtnBaja"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Baja"/>
+            </RadioGroup>
 
             <TextView
                 android:id="@+id/textView2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Describe detalladamente el problema."
+                android:text="Describe detalladamente tu problema:"
                 android:textColor="@color/colorPrimary"
                 android:textSize="24sp" />
 
@@ -86,7 +117,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:onClick="solicitar"
-                android:text="Enviar" />
+                android:text="Enviar"
+                android:background="@color/colorPrimaryDark"/>
+
+            <TextView
+                android:layout_width="30dp"
+                android:layout_height="match_parent" />
+
+            <Button
+                android:id="@+id/btnSalir_cliente"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cancelar"
+                android:background="@color/colorPrimaryDark"/>
 
         </LinearLayout>
     </ScrollView>

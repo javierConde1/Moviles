@@ -27,6 +27,9 @@ private Button Btn_iniciar;
         TV_contraseña = findViewById(R.id.TV_contraseña);
         Btn_iniciar = findViewById(R.id.Btn_iniciar);
 
+        TV_usuario.setText("");
+        TV_contraseña.setText("");
+
 
         Btn_iniciar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,7 +38,7 @@ private Button Btn_iniciar;
                     Toast.makeText(Principal.this, "DEBES INGRESAR USUARIO", Toast.LENGTH_SHORT).show();
                 }else if(TV_contraseña.getText().toString().isEmpty()){
                     Toast.makeText(Principal.this, "DEBES INGRESAR LA CONTRASEÑA", Toast.LENGTH_SHORT).show();
-                }
+                }else{
                 final String username= TV_usuario.getText().toString();
                 final String password= TV_contraseña.getText().toString();
 
@@ -91,7 +94,7 @@ private Button Btn_iniciar;
 
                 RequestQueue queue = Volley.newRequestQueue(Principal.this);
                 queue.add(loginRequest);
-            }
+            }}
         });
     }
 
