@@ -16,13 +16,14 @@ public class Menu_cliente extends AppCompatActivity {
         Intent inEstatus;
         inEstatus =new Intent(this,Estatus_cliente.class);
         startActivity(inEstatus);
-        finish();
+        //finish();
+
     }
 
     public void Solicitar(View view) {
         Intent inSolicitar;
         inSolicitar = new Intent(this,Solicitar_cliente.class);
         startActivity(inSolicitar);
-        finish();
+        //finish();
     }
 }
