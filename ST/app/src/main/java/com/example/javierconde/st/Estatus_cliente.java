@@ -10,7 +10,6 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -36,7 +35,7 @@ public class Estatus_cliente extends AppCompatActivity {
     private LinearLayoutManager linearLayoutManager;
     private List<Listado_cliente> cultivoList;
     private RecyclerView.Adapter adapter;
-    //RecyclerView rcView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,41 +52,8 @@ public class Estatus_cliente extends AppCompatActivity {
         mList.addItemDecoration(dividerItemDecoration);
         mList.setAdapter(adapter);
         getData();
-        /*txtPrueba = findViewById(R.id.txtPrueba);
-        //rcView = findViewById(R.id.rcView);
 
-        /*LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-        rcView.setLayoutManager(linearLayoutManager);*/
-
-
-        /*mAdapter = new MyAdapter(myDataset);
-        rcView.setAdapter(mAdapter);
-
-        inMostrar = getIntent();
-        Bundle bDatos = inMostrar.getExtras();
-        txtPrueba.append("El problema es:" + "\n");
-        if(bDatos.getBoolean("PILA")){
-            txtPrueba.append(" Pila" + "\n");
-        }if(bDatos.getBoolean("BATERIA")){
-            txtPrueba.append(" Bateria" + "\n");
-        }if(bDatos.getBoolean("CONTRA")){
-            txtPrueba.append(" Contra chapa" + "\n");
-        }if(bDatos.getBoolean("CERCA")){
-            txtPrueba.append(" Cerca" + "\n");
-        }if(bDatos.getBoolean("CEREBRO")){
-            txtPrueba.append(" Cerebro" + "\n");
-        }if(bDatos.getBoolean("CABLEADO")){
-            txtPrueba.append(" Cableado" + "\n");
-        }if(bDatos.getBoolean("SENSORES")){
-            txtPrueba.append(" Sensores");
-        }
-        txtPrueba.append("La descripcion es:" + "\n");
-        txtPrueba.append(bDatos.getString("DESCRIPCION"));
-        */
-        // mList.setAdapter(adapter);
         inSalir = new Intent(this,Menu_cliente.class);
-        //Toast.makeText(this,"pendejo", Toast.LENGTH_SHORT).show();
-
 
     }
     private void getData(){
@@ -108,8 +74,6 @@ public class Estatus_cliente extends AppCompatActivity {
                                 listado_cliente.setPrioridad(jsonObject.getString("prioridad"));
                                 listado_cliente.setDomicilio(jsonObject.getString("domicilio"));
                                 cultivoList.add(listado_cliente);
-                                /*Toast.makeText(getApplicationContext(), cultivo.getNo_orden(),
-                                        Toast.LENGTH_LONG).show();*/
                             }
                             catch (JSONException e){
                                 e.printStackTrace();
@@ -127,10 +91,6 @@ public class Estatus_cliente extends AppCompatActivity {
                 });
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(jsonArrayRequest);
-        //Toast.makeText(getApplicationContext(), cultivoList.toString(),
-                //Toast.LENGTH_LONG).show();
-        /*Toast.makeText(getApplicationContext(), String.valueOf(cultivoList.size()),
-                Toast.LENGTH_LONG).show();*/
     }
 
     public void Salir(View view) {
