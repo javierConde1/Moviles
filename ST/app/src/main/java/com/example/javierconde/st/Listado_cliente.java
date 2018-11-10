@@ -18,15 +18,6 @@ public class Listado_cliente {
         this.domicilio = domicilio;
     }
 
-    public Listado_cliente(int no_orden, String estado, String no_cleinte, String fecha, String prioridad, String domicilio) {
-        this.no_orden = no_orden;
-        this.estado= estado;
-        this.no_cleinte= no_cleinte;
-        this.fecha= fecha;
-        this.prioridad= prioridad;
-        this.domicilio= domicilio;
-    }
-
     public int getNo_orden() {
         return no_orden;
     }
@@ -43,13 +34,6 @@ public class Listado_cliente {
         this.estado = estado;
     }
 
-    public String getNo_cleinte() {
-        return no_cleinte;
-    }
-
-    public void setNo_cleinte(String no_cleinte) {
-        this.no_cleinte = no_cleinte;
-    }
 
     public String getFecha() {
         return fecha;

@@ -10,6 +10,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -54,6 +55,7 @@ public class Estatus_cliente extends AppCompatActivity {
         getData();
 
         inSalir = new Intent(this,Menu_cliente.class);
+        //Toast.makeText(this,"pendejo", Toast.LENGTH_SHORT).show();
 
     }
     private void getData(){
@@ -91,6 +93,10 @@ public class Estatus_cliente extends AppCompatActivity {
                 });
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(jsonArrayRequest);
+        /*Toast.makeText(getApplicationContext(), cultivoList.toString(),
+        Toast.LENGTH_LONG).show();x|
+        /*Toast.makeText(getApplicationContext(), String.valueOf(cultivoList.size()),
+                Toast.LENGTH_LONG).show();*/
     }
 
     public void Salir(View view) {
