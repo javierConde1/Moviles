@@ -6,9 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".Menu_tecnico"
     android:padding="16dp">
-
     <Button
-        android:id="@+id/btnSalirTecnico"
+        android:id="@+id/btnSalirCliente"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:background="@color/colorPrimaryDark"
@@ -27,7 +26,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textViewNT"
+                android:id="@+id/textViewNC"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Numero cliente"
@@ -35,7 +34,7 @@
                 android:textSize="18dp"/>
 
             <TextView
-                android:id="@+id/textViewNumTecnico"
+                android:id="@+id/textViewNumCliente"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1"/>
@@ -49,7 +48,7 @@
                 android:textSize="18dp"/>
 
             <TextView
-                android:id="@+id/textViewNombreTecnico"
+                android:id="@+id/textViewNombreCliente"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Miguel Armando"/>

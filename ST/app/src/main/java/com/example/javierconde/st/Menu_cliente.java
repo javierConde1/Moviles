@@ -24,8 +24,11 @@ public class Menu_cliente extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(Menu_cliente.this, Principal.class);
                 startActivity(intent);
+
             }
         });
+
+
     }
     public void Estatus(View view) {
         Intent inEstatus;
