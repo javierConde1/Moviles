@@ -92,8 +92,6 @@
         android:id="@+id/btnEstatusTec"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/btnSolicitarTec"
-        android:layout_toStartOf="@+id/btnSolicitarTec"
         android:layout_weight="1"
         android:background="@drawable/lista_ver"
         android:onClick="Estatus"
@@ -109,7 +107,7 @@
         android:layout_marginStart="50dp"
         android:text="Ver actividades" />
 
-    
+
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
