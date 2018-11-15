@@ -11,69 +11,69 @@ import android.widget.TextView;
 import java.util.List;
 
 public class Listado_tecnico_adapter extends RecyclerView.Adapter<Listado_tecnico_adapter.ViewHolder>{
-private Context contextT;
-private List<Listado_tecnico> list;
+private Context contextTec;
+private List<Listado_tecnico> listTec;
 
-public Listado_tecnico_adapter(Context contextT, List<Listado_tecnico> list){
-        this.contextT = contextT;
-        this.list = list;
+public Listado_tecnico_adapter(Context contextTec, List<Listado_tecnico> listTec){
+        this.contextTec = contextTec;
+        this.listTec = listTec;
         }
 
 
 @Override
-public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(contextT).inflate(R.layout.single_item, parent, false );
-        return new ViewHolder(v);
+public ViewHolder onCreateViewHolder(ViewGroup parentTec, int viewTypeTec) {
+        View vTec = LayoutInflater.from(contextTec).inflate(R.layout.single_item, parentTec, false );
+        return new ViewHolder(vTec);
         }
 
 @Override
-public void onBindViewHolder(ViewHolder holder, int position) {
-        Listado_tecnico Listado_tecnico = list.get(position);
-        holder.txtNo_orden.setText("Orden No. " + String.valueOf(Listado_tecnico.getNo_orden()));
-        holder.txtEstado.setText("Actividad " + Listado_tecnico.getEstado());
+public void onBindViewHolder(ViewHolder holderTec, int positionTec) {
+        Listado_tecnico Listado_tecnico = listTec.get(positionTec);
+        holderTec.txtNo_ordenTec.setText("Orden No. " + String.valueOf(Listado_tecnico.getNo_ordenTec()));
+        holderTec.txtEstadoTec.setText("Actividad " + Listado_tecnico.getEstadoTec());
 
-        switch(holder.txtEstado.getText().toString()){
+        switch(holderTec.txtEstadoTec.getText().toString()){
         case "Actividad finalizada":
-        holder.txtEstado.setTextColor(Color.GREEN);
+        holderTec.txtEstadoTec.setTextColor(Color.GREEN);
         break;
         case "Actividad pendiente":
-        holder.txtEstado.setTextColor(Color.RED);
+        holderTec.txtEstadoTec.setTextColor(Color.RED);
         break;
         }
 
-        holder.txtFecha.setText("Fecha: " + Listado_tecnico.getFecha());
+        holderTec.txtFechaTec.setText("Fecha: " + Listado_tecnico.getFechaTec());
 
-        holder.txtPrioridad.setText("Prioridad " + Listado_tecnico.getPrioridad());
+        holderTec.txtPrioridadTec.setText("Prioridad " + Listado_tecnico.getPrioridadTec());
 
-        switch(holder.txtPrioridad.getText().toString()){
+        switch(holderTec.txtPrioridadTec.getText().toString()){
         case "Prioridad baja":
-        holder.txtPrioridad.setTextColor(Color.GREEN);
+        holderTec.txtPrioridadTec.setTextColor(Color.GREEN);
         break;
         case "Prioridad media":
-        holder.txtPrioridad.setTextColor(Color.YELLOW);
+        holderTec.txtPrioridadTec.setTextColor(Color.YELLOW);
         break;
         case "Prioridad alta":
-        holder.txtPrioridad.setTextColor(Color.RED);
+        holderTec.txtPrioridadTec.setTextColor(Color.RED);
         break;
         }
 
-        holder.txtDomicilio.setText(Listado_tecnico.getDomicilio());
+        holderTec.txtDomicilioTec.setText(Listado_tecnico.getDomicilioTec());
         }
 
 @Override
 public int getItemCount() {
-        return list.size();
+        return listTec.size();
         }
 
 public class ViewHolder extends RecyclerView.ViewHolder{
-    public TextView txtNo_orden, txtEstado, txtFecha, txtPrioridad, txtDomicilio;
-    public ViewHolder(View itemView) {
-        super(itemView);
-        txtNo_orden = itemView.findViewById(R.id.main_no_orden);
-        txtEstado = itemView.findViewById(R.id.main_estado);
-        txtFecha = itemView.findViewById(R.id.main_fecha);
-        txtPrioridad = itemView.findViewById(R.id.main_prioridad);
-        txtDomicilio = itemView.findViewById(R.id.main_domicilio);
+    public TextView txtNo_ordenTec, txtEstadoTec, txtFechaTec, txtPrioridadTec, txtDomicilioTec;
+    public ViewHolder(View itemViewTec) {
+        super(itemViewTec);
+        txtNo_ordenTec = itemView.findViewById(R.id.main_no_orden);
+        txtEstadoTec = itemView.findViewById(R.id.main_estado);
+        txtFechaTec = itemView.findViewById(R.id.main_fecha);
+        txtPrioridadTec = itemView.findViewById(R.id.main_prioridad);
+        txtDomicilioTec = itemView.findViewById(R.id.main_domicilio);
     }
 }
 }

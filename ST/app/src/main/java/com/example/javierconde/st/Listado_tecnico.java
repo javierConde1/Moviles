@@ -1,71 +1,68 @@
 package com.example.javierconde.st;
 
 public class Listado_tecnico {
-    public int no_orden;
-    public String estado;
+    public int no_ordenTec;
+    public String estadoTec;
     public String no_cleinte;
-    public String fecha;
-    public String prioridad;
-    public String domicilio;
+    public String fechaTec;
+    public String prioridadTec;
+    public String domicilioTec;
 
     public Listado_tecnico() {}
 
-    public Listado_tecnico(int no_orden, String estado, String fecha, String prioridad, String domicilio) {
-        this.no_orden = no_orden;
-        this.estado = estado;
-        this.fecha = fecha;
-        this.prioridad = prioridad;
-        this.domicilio = domicilio;
+    public Listado_tecnico(int no_ordenTec, String estadoTec, String fechaTec, String prioridadTec, String domicilioTec) {
+        this.no_ordenTec = no_ordenTec;
+        this.estadoTec = estadoTec;
+        this.fechaTec = fechaTec;
+        this.prioridadTec = prioridadTec;
+        this.domicilioTec = domicilioTec;
     }
 
-    public int getNo_orden() {
-
-        return no_orden;
+    public int getNo_ordenTec() {
+        return no_ordenTec;
     }
 
-    public void setNo_orden(int no_orden) {
-
-        this.no_orden = no_orden;
+    public void setNo_ordenTec(int no_ordenTec) {
+        this.no_ordenTec = no_ordenTec;
     }
 
-    public String getEstado() {
-
-        return estado;
+    public String getEstadoTec() {
+        return estadoTec;
     }
 
-    public void setEstado(String estado) {
-
-        this.estado = estado;
+    public void setEstadoTec(String estadoTec) {
+        this.estadoTec = estadoTec;
     }
 
-
-    public String getFecha() {
-
-        return fecha;
+    public String getNo_cleinte() {
+        return no_cleinte;
     }
 
-    public void setFecha(String fecha) {
-
-        this.fecha = fecha;
+    public void setNo_cleinte(String no_cleinte) {
+        this.no_cleinte = no_cleinte;
     }
 
-    public String getPrioridad() {
-
-        return prioridad;
+    public String getFechaTec() {
+        return fechaTec;
     }
 
-    public void setPrioridad(String prioridad) {
-
-        this.prioridad = prioridad;
+    public void setFechaTec(String fechaTec) {
+        this.fechaTec = fechaTec;
     }
 
-    public String getDomicilio() {
-
-        return domicilio;
+    public String getPrioridadTec() {
+        return prioridadTec;
     }
 
-    public void setDomicilio(String domicilio) {
+    public void setPrioridadTec(String prioridadTec) {
+        this.prioridadTec = prioridadTec;
+    }
 
-        this.domicilio = domicilio;
+    public String getDomicilioTec() {
+        return domicilioTec;
+    }
+
+    public void setDomicilioTec(String domicilioTec) {
+        this.domicilioTec = domicilioTec;
     }
 }

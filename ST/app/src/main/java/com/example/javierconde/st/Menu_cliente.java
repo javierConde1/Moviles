@@ -19,6 +19,11 @@ public class Menu_cliente extends AppCompatActivity {
 
         btnSalirCliente = findViewById(R.id.btnSalirCliente);
 
+        txtNumCliente = findViewById(R.id.txtNumCliente);
+        txtNomCliente = findViewById(R.id.txtNomCliente);
+        txtApePat = findViewById(R.id.txtApCliente);
+        txtApeMat = findViewById(R.id.txtAmCliente);
+
         btnSalirCliente.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -27,6 +32,17 @@ public class Menu_cliente extends AppCompatActivity {
 
             }
         });
+
+        Intent intent = getIntent();
+        int ident = intent.getIntExtra("ident",-1);
+        String name = intent.getStringExtra("name");
+        String ap = intent.getStringExtra("ap");
+        String am = intent.getStringExtra("am");
+
+        txtNumCliente.setText(ident + "");
+        txtNomCliente.setText(name);
+        txtApePat.setText(ap);
+        txtApeMat.setText(am);
 
 
     }

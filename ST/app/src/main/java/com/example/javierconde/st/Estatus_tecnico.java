@@ -2,14 +2,15 @@ package com.example.javierconde.st;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -31,29 +32,31 @@ public class Estatus_tecnico extends AppCompatActivity {
     private String url =
             "https://javier-conde101.000webhostapp.com/Login.php";
     private RecyclerView mList;
-    private DividerItemDecoration dividerItemDecorationTec;
+    private DividerItemDecoration dividerItemDecoration;
     private LinearLayoutManager linearLayoutManager;
     private List<Listado_tecnico> cultivoList;
     private RecyclerView.Adapter adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_estatus_tecnico);
+        setContentView(R.layout.activity_estatus_cliente);
         mList = findViewById(R.id.main_list);
         cultivoList = new ArrayList<>();
         adapter = new Listado_tecnico_adapter(getApplicationContext(), cultivoList);
         linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        dividerItemDecorationTec = new DividerItemDecoration(mList.getContext(),
+        dividerItemDecoration = new DividerItemDecoration(mList.getContext(),
                 linearLayoutManager.getOrientation());
         mList.setHasFixedSize(true);
         mList.setLayoutManager(linearLayoutManager);
-        mList.addItemDecoration(dividerItemDecorationTec);
+        mList.addItemDecoration(dividerItemDecoration);
         mList.setAdapter(adapter);
         getData();
 
-        inSalir = new Intent(this,Menu_tecnico.class);
+        inSalir = new Intent(this,Menu_cliente.class);
         //Toast.makeText(this,"pendejo", Toast.LENGTH_SHORT).show();
+
     }
     private void getData(){
         final ProgressDialog progressDialog = new ProgressDialog(this);
@@ -66,13 +69,13 @@ public class Estatus_tecnico extends AppCompatActivity {
                         for (int i = 0; i < response.length(); i++){
                             try {
                                 JSONObject jsonObject = response.getJSONObject(i) ;
-                                Listado_tecnico listado_tecnico = new Listado_tecnico();
-                                listado_tecnico.setNo_orden(jsonObject.getInt("orden"));
-                                listado_tecnico.setEstado(jsonObject.getString("estado"));
-                                listado_tecnico.setFecha(jsonObject.getString("fecha"));
-                                listado_tecnico.setPrioridad(jsonObject.getString("prioridad"));
-                                listado_tecnico.setDomicilio(jsonObject.getString("domicilio"));
-                                cultivoList.add(listado_tecnico);
+                                Listado_tecnico listado_cliente = new Listado_tecnico();
+                                listado_cliente.setNo_ordenTec(jsonObject.getInt("orden"));
+                                listado_cliente.setEstadoTec(jsonObject.getString("estado"));
+                                listado_cliente.setFechaTec(jsonObject.getString("fecha"));
+                                listado_cliente.setPrioridadTec(jsonObject.getString("prioridad"));
+                                listado_cliente.setDomicilioTec(jsonObject.getString("domicilio"));
+                                cultivoList.add(listado_cliente);
                             }
                             catch (JSONException e){
                                 e.printStackTrace();

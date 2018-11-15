@@ -35,10 +35,10 @@
                 android:textSize="18dp"/>
 
             <TextView
-                android:id="@+id/textViewNumCliente"
+                android:id="@+id/txtNumCliente"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="1"/>
+                android:text="1" />
 
             <TextView
                 android:id="@+id/textViewN"
@@ -49,10 +49,10 @@
                 android:textSize="18dp"/>
 
             <TextView
-                android:id="@+id/textViewNombreCliente"
+                android:id="@+id/txtNomCliente"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Miguel Armando"/>
+                android:text="Miguel Armando" />
 
             <TextView
                 android:id="@+id/textViewAp"
@@ -63,10 +63,10 @@
                 android:textSize="18dp"/>
 
             <TextView
-                android:id="@+id/textViewApePat"
+                android:id="@+id/txtApCliente"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Balderrama"/>
+                android:text="Balderrama" />
 
             <TextView
                 android:id="@+id/textViewAm"
@@ -77,10 +77,10 @@
                 android:textSize="18dp"/>
 
             <TextView
-                android:id="@+id/textViewApeMat"
+                android:id="@+id/txtAmCliente"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Marrufo"/>
+                android:text="Marrufo" />
 
         </LinearLayout>
 
