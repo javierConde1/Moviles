@@ -49,10 +49,5 @@ public class Menu_tecnico extends AppCompatActivity {
         finish();
     }
 
-    public void Solicitar(View view) {
-        Intent inSolicitar;
-        inSolicitar = new Intent(this,Solicitar_cliente.class);
-        startActivity(inSolicitar);
-        finish();
-    }
+
 }

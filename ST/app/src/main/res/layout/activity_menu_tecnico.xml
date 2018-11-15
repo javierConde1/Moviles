@@ -99,18 +99,6 @@
         android:onClick="Estatus"
         android:padding="10dp" />
 
-    <Button
-        android:id="@+id/btnSolicitarTec"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="51dp"
-        android:layout_marginEnd="37dp"
-        android:layout_weight="1"
-        android:background="@drawable/lista_add"
-        android:onClick="Solicitar"
-        android:padding="10dp" />
 
     <TextView
         android:id="@+id/textView4"
@@ -121,14 +109,7 @@
         android:layout_marginStart="50dp"
         android:text="Ver actividades" />
 
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/btnSolicitar"
-        android:layout_below="@+id/btnEstatus"
-        android:text="Agregar actividad" />
-
+    
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
