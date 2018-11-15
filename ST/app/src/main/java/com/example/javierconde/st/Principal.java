@@ -1,6 +1,7 @@
 package com.example.javierconde.st;
 
 import android.content.Intent;
+import android.content.SearchRecentSuggestionsProvider;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -41,7 +42,6 @@ private Button Btn_iniciar;
                 }else{
                 final String username= TV_usuario.getText().toString();
                 final String password= TV_contraseña.getText().toString();
-
                 Response.Listener<String> responseListener = new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -49,9 +49,13 @@ private Button Btn_iniciar;
                             JSONObject jsonResponse = new JSONObject(response);
                             boolean success = jsonResponse.getBoolean("success");
                             if(success){
-                                String name= jsonResponse.getString("name");
                                 String privilegios= jsonResponse.getString("privilegios");
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> c3f4e54b8edb06fa611574bfc44eaa8e98aff0e5
                                 Intent iPriv;
                                 switch (privilegios){
                                     case "monitoreo":
@@ -61,10 +65,36 @@ private Button Btn_iniciar;
                                     case "cliente":
                                         iPriv=new Intent(Principal.this,Menu_cliente.class);
                                         startActivity(iPriv);
+                                        int identC = jsonResponse.getInt("ident");
+                                        String nameC= jsonResponse.getString("name");
+                                        String apC = jsonResponse.getString("ap");
+                                        String amC = jsonResponse.getString("am");
+
+                                        Intent intentC = new Intent(Principal.this, Menu_cliente.class);
+
+                                        intentC.putExtra("ident", identC);
+                                        intentC.putExtra("name", nameC);
+                                        intentC.putExtra("ap", apC);
+                                        intentC.putExtra("am", amC);
+
+                                        Principal.this.startActivity(intentC);
                                         break;
                                     case "tecnico":
                                         iPriv=new Intent(Principal.this,Menu_tecnico.class);
                                         startActivity(iPriv);
+                                        int identT = jsonResponse.getInt("ident");
+                                        String nameT= jsonResponse.getString("name");
+                                        String apT = jsonResponse.getString("ap");
+                                        String amT = jsonResponse.getString("am");
+
+                                        Intent intentT = new Intent(Principal.this, Menu_tecnico.class);
+
+                                        intentT.putExtra("ident", identT);
+                                        intentT.putExtra("name", nameT);
+                                        intentT.putExtra("ap", apT);
+                                        intentT.putExtra("am", amT);
+
+                                        Principal.this.startActivity(intentT);
                                         break;
                                 }
 

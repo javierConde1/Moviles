@@ -66,7 +66,7 @@ public class Listado_adapter extends RecyclerView.Adapter<Listado_adapter.ViewHo
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
-        public TextView txtNo_orden, txtEstado, txtCliente, txtFecha, txtPrioridad, txtDomicilio;
+        public TextView txtNo_orden, txtEstado, txtFecha, txtPrioridad, txtDomicilio;
         public ViewHolder(View itemView) {
             super(itemView);
             txtNo_orden = itemView.findViewById(R.id.main_no_orden);

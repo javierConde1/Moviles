@@ -19,13 +19,32 @@ public class Menu_cliente extends AppCompatActivity {
 
         btnSalirCliente = findViewById(R.id.btnSalirCliente);
 
+        txtNumCliente = findViewById(R.id.txtNumCliente);
+        txtNomCliente = findViewById(R.id.txtNomCliente);
+        txtApePat = findViewById(R.id.txtApCliente);
+        txtApeMat = findViewById(R.id.txtAmCliente);
+
         btnSalirCliente.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Menu_cliente.this, Principal.class);
                 startActivity(intent);
+
             }
         });
+
+        Intent intent = getIntent();
+        int ident = intent.getIntExtra("ident",-1);
+        String name = intent.getStringExtra("name");
+        String ap = intent.getStringExtra("ap");
+        String am = intent.getStringExtra("am");
+
+        txtNumCliente.setText(ident + "");
+        txtNomCliente.setText(name);
+        txtApePat.setText(ap);
+        txtApeMat.setText(am);
+
+
     }
     public void Estatus(View view) {
         Intent inEstatus;

@@ -23,7 +23,8 @@
         <activity android:name=".Menu_monitoreo" />
         <activity android:name=".Menu_tecnico" />
         <activity android:name=".Estatus_cliente" />
-        <activity android:name=".Solicitar_cliente"></activity>
+        <activity android:name=".Solicitar_cliente" />
+        <activity android:name=".Estatus_tecnico"></activity>
     </application>
 
 </manifest>
