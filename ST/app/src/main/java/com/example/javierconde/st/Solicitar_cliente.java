@@ -1,6 +1,7 @@
 package com.example.javierconde.st;
 
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,6 +10,16 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
+
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.Calendar;
+import java.util.Date;
 
 public class Solicitar_cliente extends AppCompatActivity {
     private CheckBox cbx1, cbx2, cbx3, cbx4, cbx5, cbx6, cbx7;
@@ -42,11 +53,12 @@ public class Solicitar_cliente extends AppCompatActivity {
         btnSalir_cliente.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(inEstatus);
+                finish();
             }
         });
     }
     public void solicitar(View view) {
+
         sDesc += et_desc.getText();
 
         if(cbx1.isChecked() || cbx2.isChecked() || cbx3.isChecked() || cbx4.isChecked() || cbx5.isChecked() || cbx6.isChecked() || cbx7.isChecked()){
@@ -87,6 +99,43 @@ public class Solicitar_cliente extends AppCompatActivity {
             }
             Toast.makeText(Solicitar_cliente.this, "REPORTE REALIZADO CON EXITO", Toast.LENGTH_LONG).show();
             startActivity(inEstatus);
+
+            Calendar c = Calendar.getInstance();
+            c.set(Calendar.HOUR_OF_DAY, 0);
+            c.set(Calendar.MINUTE, 0);
+            c.set(Calendar.SECOND, 0);
+
+            final String sEstado= "pendiente";
+            final Date dFecha = c.getTime();
+            final String sPri = sPrioridad;
+            final String sProblem = sDesc;
+            final String sDescripcion = et_desc.getText().toString();
+
+            Response.Listener<String> respoListener = new Response.Listener<String>() {
+                @Override
+                public void onResponse(String response) {
+                    try {
+                        JSONObject jsonResponse = new JSONObject(response);
+                        boolean success = jsonResponse.getBoolean("success");
+
+                        if(success){
+                            Intent intent = new Intent(Solicitar_cliente.this, Menu_cliente.class);
+                            Solicitar_cliente.this.startActivity(intent);
+                        }else{
+                            AlertDialog.Builder builder = new AlertDialog.Builder(Solicitar_cliente.this);
+                            builder.setMessage("Error en insertar solicitud").setNegativeButton("Retry",null)
+                                    .create().show();
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+            };
+
+            OrdenRequest ordenRequest = new OrdenRequest(sEstado, dFecha, sPri,sProblem, sDescripcion,respoListener);
+            RequestQueue queue = Volley.newRequestQueue(Solicitar_cliente.this);
+            queue.add(ordenRequest);
+
         }
 
 

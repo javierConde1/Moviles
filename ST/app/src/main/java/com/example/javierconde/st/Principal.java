@@ -50,12 +50,6 @@ private Button Btn_iniciar;
                             boolean success = jsonResponse.getBoolean("success");
                             if(success){
                                 String privilegios= jsonResponse.getString("privilegios");
-
-<<<<<<< HEAD
-=======
-
-
->>>>>>> c3f4e54b8edb06fa611574bfc44eaa8e98aff0e5
                                 Intent iPriv;
                                 switch (privilegios){
                                     case "monitoreo":
@@ -117,8 +111,10 @@ private Button Btn_iniciar;
 
                 RequestQueue queue = Volley.newRequestQueue(Principal.this);
                 queue.add(loginRequest);
+
             }}
         });
+
     }
 
 

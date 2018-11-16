@@ -43,7 +43,17 @@ public class Estatus_cliente extends AppCompatActivity {
         setContentView(R.layout.activity_estatus_cliente);
         mList = findViewById(R.id.main_list);
         cultivoList = new ArrayList<>();
-        adapter = new Listado_adapter(getApplicationContext(), cultivoList);
+        adapter = new Listado_adapter(getApplicationContext(), cultivoList, new Listado_adapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(Listado_cliente list, int position) {
+               Intent intent = new Intent(Estatus_cliente.this, Info_recycler_cliente.class);
+               intent.putExtra("orden",list.getNo_orden());
+               intent.putExtra("estado",list.getEstado());
+               intent.putExtra("fecha",list.getFecha());
+               intent.putExtra("prioridad",list.getPrioridad());
+               startActivity(intent);
+            }
+        });
         linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         dividerItemDecoration = new DividerItemDecoration(mList.getContext(),
@@ -100,7 +110,7 @@ public class Estatus_cliente extends AppCompatActivity {
     }
 
     public void Salir(View view) {
-        startActivity(inSalir);
+        //startActivity(inSalir);
         finish();
     }
 }

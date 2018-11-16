@@ -24,7 +24,8 @@
         <activity android:name=".Menu_tecnico" />
         <activity android:name=".Estatus_cliente" />
         <activity android:name=".Solicitar_cliente" />
-        <activity android:name=".Estatus_tecnico"></activity>
+        <activity android:name=".Estatus_tecnico" />
+        <activity android:name=".Info_recycler_cliente"></activity>
     </application>
 
 </manifest>

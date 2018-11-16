@@ -1,12 +1,12 @@
 package com.example.javierconde.st;
 
 public class Listado_cliente {
-    public int no_orden;
-    public String estado;
-    public String no_cleinte;
-    public String fecha;
-    public String prioridad;
-    public String domicilio;
+    private int no_orden;
+    private String estado;
+    private String no_cleinte;
+    private String fecha;
+    private String prioridad;
+    private String domicilio;
 
     public Listado_cliente() {}
 
