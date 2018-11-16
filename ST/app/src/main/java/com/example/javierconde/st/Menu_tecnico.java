@@ -46,7 +46,7 @@ public class Menu_tecnico extends AppCompatActivity {
         Intent inEstatus;
         inEstatus =new Intent(this,Estatus_tecnico.class);
         startActivity(inEstatus);
-        finish();
+
     }
 
 

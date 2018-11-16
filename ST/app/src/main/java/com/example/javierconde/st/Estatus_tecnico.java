@@ -54,7 +54,7 @@ public class Estatus_tecnico extends AppCompatActivity {
         mList.setAdapter(adapter);
         getData();
 
-        inSalir = new Intent(this,Menu_cliente.class);
+        inSalir = new Intent(this,Menu_tecnico.class);
         //Toast.makeText(this,"pendejo", Toast.LENGTH_SHORT).show();
 
     }
@@ -100,7 +100,7 @@ public class Estatus_tecnico extends AppCompatActivity {
     }
 
     public void Salir(View view) {
-        startActivity(inSalir);
+        //startActivity(inSalir);
         finish();
     }
 }

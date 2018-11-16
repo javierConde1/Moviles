@@ -100,7 +100,7 @@ public class Estatus_cliente extends AppCompatActivity {
     }
 
     public void Salir(View view) {
-        startActivity(inSalir);
+        //startActivity(inSalir);
         finish();
     }
 }
