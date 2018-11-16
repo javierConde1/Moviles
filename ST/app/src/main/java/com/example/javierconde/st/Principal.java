@@ -51,8 +51,11 @@ private Button Btn_iniciar;
                             if(success){
                                 String privilegios= jsonResponse.getString("privilegios");
 
+<<<<<<< HEAD
+=======
 
 
+>>>>>>> c3f4e54b8edb06fa611574bfc44eaa8e98aff0e5
                                 Intent iPriv;
                                 switch (privilegios){
                                     case "monitoreo":
@@ -102,6 +105,8 @@ private Button Btn_iniciar;
                                 builder.setMessage("ERROR EN LOGEO")
                                         .setNegativeButton("RETRY", null)
                                         .create().show();
+                                TV_usuario.setText("");
+                                TV_contraseña.setText("");
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
