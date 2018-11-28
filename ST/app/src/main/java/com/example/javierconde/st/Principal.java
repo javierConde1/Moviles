@@ -18,7 +18,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class Principal extends AppCompatActivity {
-EditText TV_usuario, TV_contraseña;
+    private EditText TV_usuario, TV_contraseña;
 private Button Btn_iniciar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
