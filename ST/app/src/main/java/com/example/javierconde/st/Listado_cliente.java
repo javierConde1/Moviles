@@ -34,7 +34,6 @@ public class Listado_cliente {
         this.estado = estado;
     }
 
-
     public String getFecha() {
         return fecha;
     }

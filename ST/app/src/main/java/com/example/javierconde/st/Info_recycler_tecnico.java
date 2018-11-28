@@ -26,6 +26,8 @@ public class Info_recycler_tecnico extends AppCompatActivity {
         txtDomicilio = findViewById(R.id.textViewDomicilio_Tecnico2);
         btnRegresar = findViewById(R.id.btnRegresar);
 
+        //GIT
+
         Bundle bundle = getIntent().getExtras();
 
         String sNumOrden = bundle.get("orden").toString();
