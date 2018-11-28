@@ -43,7 +43,19 @@ public class Estatus_tecnico extends AppCompatActivity {
         setContentView(R.layout.activity_estatus_cliente);
         mList = findViewById(R.id.main_list);
         cultivoList = new ArrayList<>();
-        adapter = new Listado_tecnico_adapter(getApplicationContext(), cultivoList);
+        adapter = new Listado_tecnico_adapter(getApplicationContext(), cultivoList, new Listado_tecnico_adapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(Listado_tecnico list, int position) {
+                Intent intent = new Intent(Estatus_tecnico.this, Info_recycler_tecnico.class);
+                intent.putExtra("orden",list.getNo_ordenTec());
+                intent.putExtra("estado",list.getEstadoTec());
+                intent.putExtra("fecha",list.getFechaTec());
+                intent.putExtra("prioridad",list.getPrioridadTec());
+                intent.putExtra("cliente",list.getNo_cleinte());
+                intent.putExtra("domicilio", list.getDomicilioTec());
+                startActivity(intent);
+            }
+        });
         linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         dividerItemDecoration = new DividerItemDecoration(mList.getContext(),
@@ -53,12 +65,9 @@ public class Estatus_tecnico extends AppCompatActivity {
         mList.addItemDecoration(dividerItemDecoration);
         mList.setAdapter(adapter);
         getData();
-
-        inSalir = new Intent(this,Menu_tecnico.class);
-        //Toast.makeText(this,"pendejo", Toast.LENGTH_SHORT).show();
-
     }
-    private void getData(){
+
+    private void getData() {
         final ProgressDialog progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Cargando ...");
         progressDialog.show();
@@ -66,22 +75,23 @@ public class Estatus_tecnico extends AppCompatActivity {
                 new JsonArrayRequest(url, new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {
-                        for (int i = 0; i < response.length(); i++){
+                        for (int i = 0; i < response.length(); i++) {
                             try {
-                                JSONObject jsonObject = response.getJSONObject(i) ;
+                                JSONObject jsonObject = response.getJSONObject(i);
                                 Listado_tecnico listado_cliente = new Listado_tecnico();
-                                listado_cliente.setNo_ordenTec(jsonObject.getInt("orden"));
+                                listado_cliente.setNo_ordenTec(jsonObject.getString("orden"));
                                 listado_cliente.setEstadoTec(jsonObject.getString("estado"));
                                 listado_cliente.setFechaTec(jsonObject.getString("fecha"));
                                 listado_cliente.setPrioridadTec(jsonObject.getString("prioridad"));
                                 listado_cliente.setDomicilioTec(jsonObject.getString("domicilio"));
+//                                listado_cliente.setNo_cleinte(jsonObject.getString("idcliente"));
                                 cultivoList.add(listado_cliente);
-                            }
-                            catch (JSONException e){
+                            } catch (JSONException e) {
                                 e.printStackTrace();
                                 progressDialog.dismiss();
                             }
-                        }adapter.notifyDataSetChanged();
+                        }
+                        adapter.notifyDataSetChanged();
                         progressDialog.dismiss();
                     }
                 }, new Response.ErrorListener() {
@@ -93,14 +103,10 @@ public class Estatus_tecnico extends AppCompatActivity {
                 });
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(jsonArrayRequest);
-        /*Toast.makeText(getApplicationContext(), cultivoList.toString(),
-        Toast.LENGTH_LONG).show();x|
-        /*Toast.makeText(getApplicationContext(), String.valueOf(cultivoList.size()),
-                Toast.LENGTH_LONG).show();*/
     }
 
     public void Salir(View view) {
-        //startActivity(inSalir);
-        finish();
+        inSalir = new Intent(this, Menu_tecnico.class);
+        startActivity(inSalir);
     }
 }

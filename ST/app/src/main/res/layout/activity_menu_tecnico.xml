@@ -30,7 +30,7 @@
                 android:id="@+id/textViewNT"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Numero cliente"
+                android:text="Numero tecnico"
                 android:textColor="#000000"
                 android:textSize="18dp"/>
 
@@ -121,6 +121,15 @@
         android:text="Actividades"
         android:textColor="#000000"
         android:textSize="18dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="35dp"
+        android:text="Ver actividades" />
 
 
 </RelativeLayout>

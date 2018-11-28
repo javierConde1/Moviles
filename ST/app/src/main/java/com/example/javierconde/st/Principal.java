@@ -24,6 +24,9 @@ private Button Btn_iniciar;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_principal);
+
+        getSupportActionBar().hide();
+
         TV_usuario = findViewById(R.id.TV_usuario);
         TV_contraseña = findViewById(R.id.TV_contraseña);
         Btn_iniciar = findViewById(R.id.Btn_iniciar);

@@ -8,30 +8,31 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Info_recycler_cliente extends AppCompatActivity {
+public class Info_recycler_tecnico extends AppCompatActivity {
 
-    private TextView txtProblema, txtFecha, txtFechaProg, txtTecnico, txtEstatus, txtPrioridad;
+    private TextView txtNoCliente, txtProblema, txtFecha, txtFechaProg, txtPrioridad, txtDomicilio;
     private Button btnRegresar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_info_recycler_cliente);
+        setContentView(R.layout.activity_info_recycler_tecnico);
 
-        txtProblema = findViewById(R.id.textViewProblema2);
-        txtFecha = findViewById(R.id.textViewFecha2);
-        txtFechaProg = findViewById(R.id.textViewFechaProg2);
-        txtTecnico = findViewById(R.id.textViewTecnico2);
-        txtEstatus = findViewById(R.id.textViewEstatus2);
-        txtPrioridad = findViewById(R.id.textViewPrioridad2);
+        txtNoCliente = findViewById(R.id.textViewNoCliente_Tecnico2);
+        txtProblema  = findViewById(R.id.textViewPrioridad_Tecnico2);
+        txtFecha = findViewById(R.id.textViewFecha_Tecnico2);
+        txtFechaProg = findViewById(R.id.textViewFechaProg_Tecnico2);
+        txtPrioridad = findViewById(R.id.textViewPrioridad_Tecnico2);
+        txtDomicilio = findViewById(R.id.textViewDomicilio_Tecnico2);
         btnRegresar = findViewById(R.id.btnRegresar);
 
         Bundle bundle = getIntent().getExtras();
 
         String sNumOrden = bundle.get("orden").toString();
-        String sEstado = bundle.get("estado").toString();
+//        String sNumCliente = bundle.get("cliente").toString();
         String sFecha = bundle.get("fecha").toString();
         String sPrioridad = bundle.get("prioridad").toString();
+        String sDomicilio = bundle.get("domicilio").toString();
 
         getSupportActionBar().setTitle("Orden No. " + sNumOrden);
 
@@ -47,23 +48,15 @@ public class Info_recycler_cliente extends AppCompatActivity {
                 break;
         }
 
-        switch(sEstado){
-            case "pendiente":
-                sEstado = "Pendiente";
-                break;
-            case "finalizada":
-                sEstado = "Finalizada";
-                break;
-        }
-
-        txtEstatus.setText(sEstado);
+//        txtNoCliente.setText(sNumCliente);
         txtFecha.setText(sFecha);
         txtPrioridad.setText(sPrioridad);
+        txtDomicilio.setText(sDomicilio);
 
         btnRegresar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Info_recycler_cliente.this, Estatus_cliente.class);
+                Intent intent = new Intent(Info_recycler_tecnico.this, Estatus_tecnico.class);
                 startActivity(intent);
             }
         });

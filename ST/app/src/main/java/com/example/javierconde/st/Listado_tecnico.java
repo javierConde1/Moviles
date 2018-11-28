@@ -1,16 +1,16 @@
 package com.example.javierconde.st;
 
 public class Listado_tecnico {
-    public int no_ordenTec;
-    public String estadoTec;
-    public String no_cleinte;
-    public String fechaTec;
-    public String prioridadTec;
-    public String domicilioTec;
+    private String no_ordenTec;
+    private String estadoTec;
+    private String no_cleinte;
+    private String fechaTec;
+    private String prioridadTec;
+    private String domicilioTec;
 
     public Listado_tecnico() {}
 
-    public Listado_tecnico(int no_ordenTec, String estadoTec, String fechaTec, String prioridadTec, String domicilioTec) {
+    public Listado_tecnico(String no_ordenTec, String estadoTec, String fechaTec, String prioridadTec, String domicilioTec) {
         this.no_ordenTec = no_ordenTec;
         this.estadoTec = estadoTec;
         this.fechaTec = fechaTec;
@@ -18,11 +18,11 @@ public class Listado_tecnico {
         this.domicilioTec = domicilioTec;
     }
 
-    public int getNo_ordenTec() {
+    public String getNo_ordenTec() {
         return no_ordenTec;
     }
 
-    public void setNo_ordenTec(int no_ordenTec) {
+    public void setNo_ordenTec(String no_ordenTec) {
         this.no_ordenTec = no_ordenTec;
     }
 

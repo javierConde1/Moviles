@@ -11,13 +11,13 @@ import android.widget.TextView;
 
 import java.util.List;
 
-public class Listado_adapter extends RecyclerView.Adapter<Listado_adapter.ViewHolder>{
+public class Listado_adapter extends RecyclerView.Adapter<Listado_adapter.ViewHolder> {
     private Context context;
     private List<Listado_cliente> list;
     private OnItemClickListener itemClickListener;
 
 
-    public Listado_adapter(Context context, List<Listado_cliente> list, OnItemClickListener itemClickListener){
+    public Listado_adapter(Context context, List<Listado_cliente> list, OnItemClickListener itemClickListener) {
         this.context = context;
         this.list = list;
         this.itemClickListener = itemClickListener;
@@ -25,8 +25,8 @@ public class Listado_adapter extends RecyclerView.Adapter<Listado_adapter.ViewHo
 
 
     @Override
-    public ViewHolder onCreateViewHolder( ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(context).inflate(R.layout.single_item, parent, false );
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View v = LayoutInflater.from(context).inflate(R.layout.single_item, parent, false);
         return new ViewHolder(v);
     }
 
@@ -40,8 +40,9 @@ public class Listado_adapter extends RecyclerView.Adapter<Listado_adapter.ViewHo
         return list.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public class ViewHolder extends RecyclerView.ViewHolder {
         public TextView txtNo_orden, txtEstado, txtFecha, txtPrioridad, txtDomicilio;
+
         public ViewHolder(View itemView) {
             super(itemView);
             txtNo_orden = itemView.findViewById(R.id.main_no_orden);
@@ -51,11 +52,11 @@ public class Listado_adapter extends RecyclerView.Adapter<Listado_adapter.ViewHo
             txtDomicilio = itemView.findViewById(R.id.main_domicilio);
         }
 
-        public void Bind(final Listado_cliente list, final OnItemClickListener listener){
+        public void Bind(final Listado_cliente list, final OnItemClickListener listener) {
             txtNo_orden.setText("Orden No. " + list.getNo_orden());
             txtEstado.setText("Actividad " + list.getEstado());
 
-            switch(txtEstado.getText().toString()){
+            switch (txtEstado.getText().toString()) {
                 case "Actividad finalizada":
                     txtEstado.setTextColor(Color.GREEN);
                     break;
@@ -68,7 +69,7 @@ public class Listado_adapter extends RecyclerView.Adapter<Listado_adapter.ViewHo
 
             txtPrioridad.setText("Prioridad " + list.getPrioridad());
 
-            switch(txtPrioridad.getText().toString()){
+            switch (txtPrioridad.getText().toString()) {
                 case "Prioridad baja":
                     txtPrioridad.setTextColor(Color.GREEN);
                     break;

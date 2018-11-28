@@ -59,7 +59,7 @@ public class Solicitar_cliente extends AppCompatActivity {
     }
     public void solicitar(View view) {
 
-        sDesc += et_desc.getText();
+        //sDesc += et_desc.getText();
 
         if(cbx1.isChecked() || cbx2.isChecked() || cbx3.isChecked() || cbx4.isChecked() || cbx5.isChecked() || cbx6.isChecked() || cbx7.isChecked()){
             sDesc += ". Fallos en: ";
@@ -135,6 +135,7 @@ public class Solicitar_cliente extends AppCompatActivity {
             OrdenRequest ordenRequest = new OrdenRequest(sEstado, dFecha, sPri,sProblem, sDescripcion,respoListener);
             RequestQueue queue = Volley.newRequestQueue(Solicitar_cliente.this);
             queue.add(ordenRequest);
+            finish();
 
         }
 

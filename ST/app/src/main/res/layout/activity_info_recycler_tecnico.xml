@@ -4,10 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Info_recycler_cliente"
+    tools:context=".Info_recycler_tecnico"
     android:padding="16dp"
     android:orientation="vertical">
-
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,7 +15,20 @@
         >
 
         <TextView
-            android:id="@+id/textViewProblema"
+            android:id="@+id/textViewNoCliente_Tecnico"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No Cliente"
+            android:textColor="#000000"
+            android:textSize="18dp"/>
+
+        <TextView
+            android:id="@+id/textViewNoCliente_Tecnico2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/textViewProblema_Tecnico"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Problema"
@@ -24,12 +36,12 @@
             android:textSize="18dp"/>
 
         <TextView
-            android:id="@+id/textViewProblema2"
+            android:id="@+id/textViewProblema_Tecnico2"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content" />
 
         <TextView
-            android:id="@+id/textViewFecha"
+            android:id="@+id/textViewFecha_Tecnico"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Fecha en que se hizó la orden"
@@ -37,12 +49,12 @@
             android:textSize="18dp"/>
 
         <TextView
-            android:id="@+id/textViewFecha2"
+            android:id="@+id/textViewFecha_Tecnico2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
         <TextView
-            android:id="@+id/textViewFechaProg"
+            android:id="@+id/textViewFechaProg_Tecnico"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Fecha programada"
@@ -50,38 +62,12 @@
             android:textSize="18dp"/>
 
         <TextView
-            android:id="@+id/textViewFechaProg2"
+            android:id="@+id/textViewFechaProg_Tecnico2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
         <TextView
-            android:id="@+id/textViewTecnico"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Tecnico"
-            android:textColor="#000000"
-            android:textSize="18dp"/>
-
-        <TextView
-            android:id="@+id/textViewTecnico2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:id="@+id/textViewEstatus"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Estatus"
-            android:textColor="#000000"
-            android:textSize="18dp"/>
-
-        <TextView
-            android:id="@+id/textViewEstatus2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:id="@+id/textViewPrioridad"
+            android:id="@+id/textViewPrioridad_Tecnico"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Prioridad"
@@ -89,7 +75,20 @@
             android:textSize="18dp"/>
 
         <TextView
-            android:id="@+id/textViewPrioridad2"
+            android:id="@+id/textViewPrioridad_Tecnico2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/textViewDomicilio_Tecnico"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Domicilio"
+            android:textColor="#000000"
+            android:textSize="18dp"/>
+
+        <TextView
+            android:id="@+id/textViewDomicilio_Tecnico2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
@@ -108,6 +107,5 @@
             android:background="@color/colorPrimaryDark"/>
 
     </LinearLayout>
-
 
 </LinearLayout>

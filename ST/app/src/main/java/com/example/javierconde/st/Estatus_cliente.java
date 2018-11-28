@@ -26,15 +26,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Estatus_cliente extends AppCompatActivity {
-    TextView txtPrueba;
-    Intent inMostrar;
-    Intent inSalir;
+    private TextView txtPrueba;
+    private Intent inMostrar;
+    private Intent inSalir;
     private String url =
             "https://javier-conde101.000webhostapp.com/Login.php";
     private RecyclerView mList;
     private DividerItemDecoration dividerItemDecoration;
     private LinearLayoutManager linearLayoutManager;
-    private List<Listado_cliente> cultivoList;
+    private List<Listado_cliente> clientesList;
     private RecyclerView.Adapter adapter;
 
     @Override
@@ -42,8 +42,8 @@ public class Estatus_cliente extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_estatus_cliente);
         mList = findViewById(R.id.main_list);
-        cultivoList = new ArrayList<>();
-        adapter = new Listado_adapter(getApplicationContext(), cultivoList, new Listado_adapter.OnItemClickListener() {
+        clientesList = new ArrayList<>();
+        adapter = new Listado_adapter(getApplicationContext(), clientesList, new Listado_adapter.OnItemClickListener() {
             @Override
             public void onItemClick(Listado_cliente list, int position) {
                Intent intent = new Intent(Estatus_cliente.this, Info_recycler_cliente.class);
@@ -64,9 +64,6 @@ public class Estatus_cliente extends AppCompatActivity {
         mList.setAdapter(adapter);
         getData();
 
-        inSalir = new Intent(this,Menu_cliente.class);
-        //Toast.makeText(this,"pendejo", Toast.LENGTH_SHORT).show();
-
     }
     private void getData(){
         final ProgressDialog progressDialog = new ProgressDialog(this);
@@ -85,7 +82,7 @@ public class Estatus_cliente extends AppCompatActivity {
                                 listado_cliente.setFecha(jsonObject.getString("fecha"));
                                 listado_cliente.setPrioridad(jsonObject.getString("prioridad"));
                                 listado_cliente.setDomicilio(jsonObject.getString("domicilio"));
-                                cultivoList.add(listado_cliente);
+                                clientesList.add(listado_cliente);
                             }
                             catch (JSONException e){
                                 e.printStackTrace();
@@ -103,14 +100,10 @@ public class Estatus_cliente extends AppCompatActivity {
                 });
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(jsonArrayRequest);
-        /*Toast.makeText(getApplicationContext(), cultivoList.toString(),
-        Toast.LENGTH_LONG).show();x|
-        /*Toast.makeText(getApplicationContext(), String.valueOf(cultivoList.size()),
-                Toast.LENGTH_LONG).show();*/
     }
 
     public void Salir(View view) {
-        //startActivity(inSalir);
-        finish();
+        inSalir = new Intent(this,Menu_cliente.class);
+        startActivity(inSalir);
     }
 }

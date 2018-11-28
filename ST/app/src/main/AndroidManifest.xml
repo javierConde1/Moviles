@@ -7,8 +7,8 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:icon="@drawable/icon"
+        android:label="EuroAlarmas"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -25,7 +25,8 @@
         <activity android:name=".Estatus_cliente" />
         <activity android:name=".Solicitar_cliente" />
         <activity android:name=".Estatus_tecnico" />
-        <activity android:name=".Info_recycler_cliente"></activity>
+        <activity android:name=".Info_recycler_cliente" />
+        <activity android:name=".Info_recycler_tecnico"></activity>
     </application>
 
 </manifest>
