@@ -19,7 +19,7 @@ public class Info_recycler_tecnico extends AppCompatActivity {
         setContentView(R.layout.activity_info_recycler_tecnico);
 
         txtNoCliente = findViewById(R.id.textViewNoCliente_Tecnico2);
-        txtProblema  = findViewById(R.id.textViewPrioridad_Tecnico2);
+        txtProblema  = findViewById(R.id.textViewProblema_Tecnico2);
         txtFecha = findViewById(R.id.textViewFecha_Tecnico2);
         txtFechaProg = findViewById(R.id.textViewFechaProg_Tecnico2);
         txtPrioridad = findViewById(R.id.textViewPrioridad_Tecnico2);
@@ -27,8 +27,6 @@ public class Info_recycler_tecnico extends AppCompatActivity {
         txtDescripcion = findViewById(R.id.textViewDescripcion_Tecnico2);
 
         btnRegresar = findViewById(R.id.btnRegresar);
-
-        //GIT
 
         Bundle bundle = getIntent().getExtras();
 
