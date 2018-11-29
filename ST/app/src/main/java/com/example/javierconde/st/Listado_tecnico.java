@@ -7,15 +7,22 @@ public class Listado_tecnico {
     private String fechaTec;
     private String prioridadTec;
     private String domicilioTec;
+    private String sProblema;
+    private String sDesc;
+    private String sFechaprog;
 
     public Listado_tecnico() {}
 
-    public Listado_tecnico(String no_ordenTec, String estadoTec, String fechaTec, String prioridadTec, String domicilioTec) {
+    public Listado_tecnico(String no_ordenTec, String estadoTec, String fechaTec, String prioridadTec, String domicilioTec, String sFechaprog,String sProblema, String sDesc, String no_cleinte) {
         this.no_ordenTec = no_ordenTec;
         this.estadoTec = estadoTec;
         this.fechaTec = fechaTec;
         this.prioridadTec = prioridadTec;
         this.domicilioTec = domicilioTec;
+        this.sProblema= sProblema;
+        this.sDesc = sDesc;
+        this.sFechaprog = sFechaprog;
+        this.no_cleinte= no_cleinte;
     }
 
     public String getNo_ordenTec() {
@@ -64,5 +71,29 @@ public class Listado_tecnico {
 
     public void setDomicilioTec(String domicilioTec) {
         this.domicilioTec = domicilioTec;
+    }
+
+    public String getsProblema() {
+        return sProblema;
+    }
+
+    public void setsProblema(String sProblema) {
+        this.sProblema = sProblema;
+    }
+
+    public String getsDesc() {
+        return sDesc;
+    }
+
+    public void setsDesc(String sDesc) {
+        this.sDesc = sDesc;
+    }
+
+    public String getsFechaprog() {
+        return sFechaprog;
+    }
+
+    public void setsFechaprog(String sFechaprog) {
+        this.sFechaprog = sFechaprog;
     }
 }
