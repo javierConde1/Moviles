@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 public class Info_recycler_tecnico extends AppCompatActivity {
 
-    private TextView txtNoCliente, txtProblema, txtFecha, txtFechaProg, txtPrioridad, txtDomicilio;
+    private TextView txtNoCliente, txtProblema, txtFecha, txtFechaProg, txtPrioridad, txtDomicilio,txtDescripcion;
     private Button btnRegresar;
 
     @Override
@@ -24,6 +24,8 @@ public class Info_recycler_tecnico extends AppCompatActivity {
         txtFechaProg = findViewById(R.id.textViewFechaProg_Tecnico2);
         txtPrioridad = findViewById(R.id.textViewPrioridad_Tecnico2);
         txtDomicilio = findViewById(R.id.textViewDomicilio_Tecnico2);
+        txtDescripcion = findViewById(R.id.textViewDescripcion_Tecnico2);
+
         btnRegresar = findViewById(R.id.btnRegresar);
 
         //GIT
@@ -31,10 +33,13 @@ public class Info_recycler_tecnico extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
 
         String sNumOrden = bundle.get("orden").toString();
-//        String sNumCliente = bundle.get("cliente").toString();
         String sFecha = bundle.get("fecha").toString();
         String sPrioridad = bundle.get("prioridad").toString();
         String sDomicilio = bundle.get("domicilio").toString();
+        String sProblema = bundle.get("problema").toString();
+        String sDesc = bundle.get("sdec").toString();
+        String sFechaProg = bundle.get("fechaprog").toString();
+        String sNumCliente = bundle.get("cliente").toString();
 
         getSupportActionBar().setTitle("Orden No. " + sNumOrden);
 
@@ -50,10 +55,13 @@ public class Info_recycler_tecnico extends AppCompatActivity {
                 break;
         }
 
-//        txtNoCliente.setText(sNumCliente);
+        txtNoCliente.setText(sNumCliente);
         txtFecha.setText(sFecha);
         txtPrioridad.setText(sPrioridad);
         txtDomicilio.setText(sDomicilio);
+        txtProblema.setText(sProblema);
+        txtDescripcion.setText(sDesc);
+        txtFechaProg.setText(sFechaProg);
 
         btnRegresar.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -51,8 +51,11 @@ public class Estatus_tecnico extends AppCompatActivity {
                 intent.putExtra("estado",list.getEstadoTec());
                 intent.putExtra("fecha",list.getFechaTec());
                 intent.putExtra("prioridad",list.getPrioridadTec());
-                intent.putExtra("cliente",list.getNo_cleinte());
                 intent.putExtra("domicilio", list.getDomicilioTec());
+                intent.putExtra("fechaprog",list.getsFechaprog());
+                intent.putExtra("problema", list.getsProblema());
+                intent.putExtra("sdec", list.getsDesc());
+                intent.putExtra("cliente",list.getNo_cleinte());
                 startActivity(intent);
             }
         });
@@ -84,7 +87,11 @@ public class Estatus_tecnico extends AppCompatActivity {
                                 listado_cliente.setFechaTec(jsonObject.getString("fecha"));
                                 listado_cliente.setPrioridadTec(jsonObject.getString("prioridad"));
                                 listado_cliente.setDomicilioTec(jsonObject.getString("domicilio"));
-//                                listado_cliente.setNo_cleinte(jsonObject.getString("idcliente"));
+                                listado_cliente.setsFechaprog(jsonObject.getString("fechaprog"));
+                                listado_cliente.setsProblema(jsonObject.getString("problema"));
+                                listado_cliente.setsDesc(jsonObject.getString("sdesc"));
+                                listado_cliente.setNo_cleinte(jsonObject.getString("idcliente"));
+
                                 cultivoList.add(listado_cliente);
                             } catch (JSONException e) {
                                 e.printStackTrace();

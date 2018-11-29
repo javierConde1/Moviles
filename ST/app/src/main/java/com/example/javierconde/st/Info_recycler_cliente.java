@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 public class Info_recycler_cliente extends AppCompatActivity {
 
-    private TextView txtProblema, txtFecha, txtFechaProg, txtTecnico, txtEstatus, txtPrioridad;
+    private TextView txtProblema, txtFecha, txtFechaProg, txtTecnico, txtEstatus, txtPrioridad, txtDesc;
     private Button btnRegresar;
 
     @Override
@@ -23,6 +23,7 @@ public class Info_recycler_cliente extends AppCompatActivity {
         txtTecnico = findViewById(R.id.textViewTecnico2);
         txtEstatus = findViewById(R.id.textViewEstatus2);
         txtPrioridad = findViewById(R.id.textViewPrioridad2);
+        txtDesc = findViewById(R.id.textViewDescripcion2);
         btnRegresar = findViewById(R.id.btnRegresar);
 
         Bundle bundle = getIntent().getExtras();
@@ -31,6 +32,10 @@ public class Info_recycler_cliente extends AppCompatActivity {
         String sEstado = bundle.get("estado").toString();
         String sFecha = bundle.get("fecha").toString();
         String sPrioridad = bundle.get("prioridad").toString();
+        String sFechaprog = bundle.get("fechaprog").toString();
+        String sProblema = bundle.get("problema").toString();
+        String sTecnico = bundle.get("tecnico").toString();
+        String sDesc = bundle.get("sDesc").toString();
 
         getSupportActionBar().setTitle("Orden No. " + sNumOrden);
 
@@ -58,6 +63,10 @@ public class Info_recycler_cliente extends AppCompatActivity {
         txtEstatus.setText(sEstado);
         txtFecha.setText(sFecha);
         txtPrioridad.setText(sPrioridad);
+        txtFechaProg.setText(sFechaprog);
+        txtTecnico.setText(sTecnico);
+        txtProblema.setText(sProblema);
+        txtDesc.setText(sDesc);
 
         btnRegresar.setOnClickListener(new View.OnClickListener() {
             @Override

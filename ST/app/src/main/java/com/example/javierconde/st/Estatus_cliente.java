@@ -51,6 +51,11 @@ public class Estatus_cliente extends AppCompatActivity {
                intent.putExtra("estado",list.getEstado());
                intent.putExtra("fecha",list.getFecha());
                intent.putExtra("prioridad",list.getPrioridad());
+                intent.putExtra("fechaprog",list.getFechaProg());
+                intent.putExtra("problema",list.getProblema());
+                intent.putExtra("tecnico",list.getTecnico());
+                intent.putExtra("sDesc",list.getsDesc());
+
                startActivity(intent);
             }
         });
@@ -82,6 +87,10 @@ public class Estatus_cliente extends AppCompatActivity {
                                 listado_cliente.setFecha(jsonObject.getString("fecha"));
                                 listado_cliente.setPrioridad(jsonObject.getString("prioridad"));
                                 listado_cliente.setDomicilio(jsonObject.getString("domicilio"));
+                                listado_cliente.setFechaProg(jsonObject.getString("fechaprog"));
+                                listado_cliente.setProblema(jsonObject.getString("problema"));
+                                listado_cliente.setTecnico(jsonObject.getString("idtec"));
+                                listado_cliente.setsDesc(jsonObject.getString("sdesc"));
                                 clientesList.add(listado_cliente);
                             }
                             catch (JSONException e){
