@@ -103,7 +103,7 @@ public class Estatus_cliente extends AppCompatActivity {
                 }, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Log.e("Volley", error.toString());
+                        Log.e("VolleySingleton", error.toString());
                         progressDialog.dismiss();
                     }
                 });

@@ -27,10 +27,8 @@ public class Menu_cliente extends AppCompatActivity {
         btnSalirCliente.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                /*Intent intent = new Intent(Menu_cliente.this, Principal.class);
-                startActivity(intent);*/
-                finish();
-
+                Intent intent = new Intent(Menu_cliente.this, Principal.class);
+                startActivity(intent);
             }
         });
 
