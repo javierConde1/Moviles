@@ -41,7 +41,7 @@ public class Info_recycler_tecnico extends AppCompatActivity {
         txtDomicilio = findViewById(R.id.textViewDomicilio_Tecnico2);
         txtDescripcion = findViewById(R.id.textViewDescripcion_Tecnico2);
 
-        btnRegresar = findViewById(R.id.btnRegresar);
+        btnRegresar = findViewById(R.id.btnRegresar30);
 
         Bundle bundle = getIntent().getExtras();
 

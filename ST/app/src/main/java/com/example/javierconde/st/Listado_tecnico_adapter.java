@@ -42,7 +42,6 @@ public class Listado_tecnico_adapter extends RecyclerView.Adapter<Listado_tecnic
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         private TextView txtNo_ordenTec, txtEstadoTec, txtFechaTec, txtPrioridadTec, txtDomicilioTec;
-        private Button btnFinalizar;
 
         public ViewHolder(View itemViewTec) {
             super(itemViewTec);
@@ -51,7 +50,6 @@ public class Listado_tecnico_adapter extends RecyclerView.Adapter<Listado_tecnic
             txtFechaTec = itemView.findViewById(R.id.main_fechaTec);
             txtPrioridadTec = itemView.findViewById(R.id.main_prioridadTec);
             txtDomicilioTec = itemView.findViewById(R.id.main_domicilioTec);
-            btnFinalizar = itemView.findViewById(R.id.btnFinalizar);
         }
 
         public void Bind(final Listado_tecnico list, final OnItemClickListener listener){
@@ -84,16 +82,6 @@ public class Listado_tecnico_adapter extends RecyclerView.Adapter<Listado_tecnic
             }
 
             txtDomicilioTec.setText(list.getDomicilioTec());
-
-            btnFinalizar.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    txtEstadoTec.setText("Actividad finalizada");
-                    txtEstadoTec.setTextColor(Color.GREEN);
-
-                    //MODIFICAR EN LA BD
-                }
-            });
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
