@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="160dp"
+    android:layout_height="130dp"
     android:padding="10dp"
     android:background="#000000"
     android:layout_margin="16dp">
@@ -43,12 +43,5 @@
         android:gravity="center"
         android:textColor="#FFFFFF"
         android:text="Domicilio" />
-
-    <Button
-        android:id="@+id/btnFinalizar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Finalizar"
-        android:background="#0CFF00"/>
 
 </LinearLayout>
