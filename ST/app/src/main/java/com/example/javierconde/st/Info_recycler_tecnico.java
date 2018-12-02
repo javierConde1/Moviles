@@ -2,6 +2,7 @@ package com.example.javierconde.st;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,9 +14,16 @@ import android.content.Context;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
+import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -86,15 +94,19 @@ public class Info_recycler_tecnico extends AppCompatActivity {
     }
 
     public void Finalizar(View view) {
-        pDialog=new ProgressDialog(this);
+
+        webServiceActualizar();
+    }
+    private void webServiceActualizar() {
+        JsonObjectRequest jsonObjectRequest;
+        StringRequest stringRequest;//SE MODIFICA
+        pDialog=new ProgressDialog(Info_recycler_tecnico.this);
         pDialog.setMessage("Cargando...");
         pDialog.show();
 
-        
+        String url="https://javier-conde101.000webhostapp.com/update.php";
 
-        String u = "https://javier-conde101.000webhostapp.com/update.php";
-
-        stringRequest=new StringRequest(Request.Method.POST, u, new Response.Listener<String>() {
+        stringRequest=new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 pDialog.hide();
@@ -119,8 +131,7 @@ public class Info_recycler_tecnico extends AppCompatActivity {
         }){
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
-                String estado ="finalizado";
-
+                String estado = "estado";
                 Map<String,String> parametros=new HashMap<>();
                 parametros.put("estado",estado);
 
@@ -128,7 +139,6 @@ public class Info_recycler_tecnico extends AppCompatActivity {
             }
         };
         //request.add(stringRequest);
-        VolleySingleton.getIntanciaVolley(this).addToRequestQueue(stringRequest);
+        Volley.newRequestQueue(Info_recycler_tecnico.this).add(stringRequest);
     }
-
 }
