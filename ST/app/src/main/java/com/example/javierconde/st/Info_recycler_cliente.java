@@ -71,8 +71,7 @@ public class Info_recycler_cliente extends AppCompatActivity {
         btnRegresar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Info_recycler_cliente.this, Estatus_cliente.class);
-                startActivity(intent);
+                finish();
             }
         });
     }

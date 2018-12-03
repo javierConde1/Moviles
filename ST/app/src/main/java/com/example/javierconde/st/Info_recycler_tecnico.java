@@ -87,58 +87,10 @@ public class Info_recycler_tecnico extends AppCompatActivity {
         btnRegresar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Info_recycler_tecnico.this, Estatus_tecnico.class);
-                startActivity(intent);
+                finish();
             }
         });
     }
 
-    public void Finalizar(View view) {
 
-        webServiceActualizar();
-    }
-    private void webServiceActualizar() {
-        JsonObjectRequest jsonObjectRequest;
-        StringRequest stringRequest;//SE MODIFICA
-        pDialog=new ProgressDialog(Info_recycler_tecnico.this);
-        pDialog.setMessage("Cargando...");
-        pDialog.show();
-
-        String url="https://javier-conde101.000webhostapp.com/update.php";
-
-        stringRequest=new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                pDialog.hide();
-
-                if (response.trim().equalsIgnoreCase("actualiza")){
-                    // etiNombre.setText("");
-                    //  txtDocumento.setText("");
-                    //   etiProfesion.setText("");
-                    Toast.makeText(Info_recycler_tecnico.this,"Se ha Actualizado con exito",Toast.LENGTH_SHORT).show();
-                }else{
-                    Toast.makeText(Info_recycler_tecnico.this,"No se ha Actualizado ",Toast.LENGTH_SHORT).show();
-                    Log.i("RESPUESTA: ",""+response);
-                }
-
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(Info_recycler_tecnico.this,"No se ha podido conectar",Toast.LENGTH_SHORT).show();
-                pDialog.hide();
-            }
-        }){
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                String estado = "estado";
-                Map<String,String> parametros=new HashMap<>();
-                parametros.put("estado",estado);
-
-                return parametros;
-            }
-        };
-        //request.add(stringRequest);
-        Volley.newRequestQueue(Info_recycler_tecnico.this).add(stringRequest);
-    }
 }

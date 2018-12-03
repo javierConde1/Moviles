@@ -112,7 +112,6 @@ public class Estatus_cliente extends AppCompatActivity {
     }
 
     public void Salir(View view) {
-        inSalir = new Intent(this,Menu_cliente.class);
-        startActivity(inSalir);
+        finish();
     }
 }

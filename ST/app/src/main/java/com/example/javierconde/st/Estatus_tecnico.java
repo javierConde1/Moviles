@@ -113,7 +113,6 @@ public class Estatus_tecnico extends AppCompatActivity {
     }
 
     public void Salir(View view) {
-        inSalir = new Intent(this, Menu_tecnico.class);
-        startActivity(inSalir);
+        finish();
     }
 }

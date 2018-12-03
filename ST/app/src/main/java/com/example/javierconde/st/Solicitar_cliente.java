@@ -98,7 +98,7 @@ public class Solicitar_cliente extends AppCompatActivity {
                 sPrioridad = "baja";
             }
             Toast.makeText(Solicitar_cliente.this, "REPORTE REALIZADO CON EXITO", Toast.LENGTH_LONG).show();
-            startActivity(inEstatus);
+            //startActivity(inEstatus);
 
             Calendar c = Calendar.getInstance();
             c.set(Calendar.HOUR_OF_DAY, 0);
@@ -119,8 +119,8 @@ public class Solicitar_cliente extends AppCompatActivity {
                         boolean success = jsonResponse.getBoolean("success");
 
                         if(success){
-                            Intent intent = new Intent(Solicitar_cliente.this, Menu_cliente.class);
-                            Solicitar_cliente.this.startActivity(intent);
+                            //Intent intent = new Intent(Solicitar_cliente.this, Menu_cliente.class);
+                            finish();
                         }else{
                             AlertDialog.Builder builder = new AlertDialog.Builder(Solicitar_cliente.this);
                             builder.setMessage("Error en insertar solicitud").setNegativeButton("Retry",null)
