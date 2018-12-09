@@ -17,7 +17,7 @@ public class OrdenRequest extends StringRequest {
         params.put("estado", sEstado);
         params.put("fecha", String.valueOf(sFecha));
         params.put("prioridad", sPrioridad);
-        //params.put("domicilio", sDomicilio);
+        //params.put("domicilio", sDom);
         //params.put("fechaprog", sfechaprog);
         params.put("problema", sProblema);
         params.put("sdesc", sDescripcion);

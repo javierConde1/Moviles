@@ -48,6 +48,7 @@ public class Solicitar_cliente extends AppCompatActivity {
         rbtnAlta = findViewById(R.id.rbtnAlta);
         rbtnMedia = findViewById(R.id.rbtnMedia);
         rbtnBaja = findViewById(R.id.rbtnBaja);
+
         inEstatus = new Intent(this, Menu_cliente.class);
 
         btnSalir_cliente.setOnClickListener(new View.OnClickListener() {
@@ -98,7 +99,7 @@ public class Solicitar_cliente extends AppCompatActivity {
                 sPrioridad = "baja";
             }
             Toast.makeText(Solicitar_cliente.this, "REPORTE REALIZADO CON EXITO", Toast.LENGTH_LONG).show();
-            //startActivity(inEstatus);
+           // startActivity(inEstatus);
 
             Calendar c = Calendar.getInstance();
             c.set(Calendar.HOUR_OF_DAY, 0);
@@ -120,6 +121,7 @@ public class Solicitar_cliente extends AppCompatActivity {
 
                         if(success){
                             //Intent intent = new Intent(Solicitar_cliente.this, Menu_cliente.class);
+                           // Solicitar_cliente.this.startActivity(intent);
                             finish();
                         }else{
                             AlertDialog.Builder builder = new AlertDialog.Builder(Solicitar_cliente.this);
@@ -132,7 +134,7 @@ public class Solicitar_cliente extends AppCompatActivity {
                 }
             };
 
-            OrdenRequest ordenRequest = new OrdenRequest(sEstado, dFecha, sPri,sProblem, sDescripcion,respoListener);
+            OrdenRequest ordenRequest = new OrdenRequest(sEstado, dFecha, sPri, sProblem, sDescripcion,respoListener);
             RequestQueue queue = Volley.newRequestQueue(Solicitar_cliente.this);
             queue.add(ordenRequest);
             finish();

@@ -93,4 +93,8 @@ public class Info_recycler_tecnico extends AppCompatActivity {
     }
 
 
+    public void Finalizar(View view) {
+
+    }
+
 }
