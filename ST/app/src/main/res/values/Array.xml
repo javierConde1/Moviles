@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <String-array name="opciones">
+        <item>Cliente</item>
+        <item>Proveedor</item>
+    </String-array>
+</resources>
