@@ -29,8 +29,8 @@ public class Estatus_cliente extends AppCompatActivity {
     private TextView txtPrueba;
     private Intent inMostrar;
     private Intent inSalir;
-    private String url =
-            "https://javier-conde101.000webhostapp.com/Login.php";
+    private String url = "http://javier-conde101.hostingerapp.com/Login.php";
+          //  "https://javier-conde101.000webhostapp.com/Login.php";
     private RecyclerView mList;
     private DividerItemDecoration dividerItemDecoration;
     private LinearLayoutManager linearLayoutManager;

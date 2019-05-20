@@ -9,7 +9,8 @@ import java.util.Map;
 
 public class ActualizaRequest extends StringRequest {
 
-    private  static final String ACTUALIZA_REQUEST_URL="https://javier-conde101.000webhostapp.com/update.php";
+    private  static final String ACTUALIZA_REQUEST_URL= "http://javier-conde101.hostingerapp.com/update.php";
+            //"https://javier-conde101.000webhostapp.com/update.php";
     private Map<String,String> params;
     public ActualizaRequest(String sEstado, Response.Listener<String> listener){
         super(Method.POST, ACTUALIZA_REQUEST_URL,listener,null);

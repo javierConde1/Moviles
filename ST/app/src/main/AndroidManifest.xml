@@ -27,7 +27,6 @@
         <activity android:name=".Estatus_tecnico" />
         <activity android:name=".Info_recycler_cliente" />
         <activity android:name=".Info_recycler_tecnico" />
-        <activity android:name=".Registrar"></activity>
     </application>
 
 </manifest>
