@@ -11,7 +11,7 @@ public class Info_recycler_cliente extends AppCompatActivity {
 
     private TextView txtProblema, txtFecha, txtFechaProg, txtTecnico, txtEstatus, txtPrioridad, txtDesc;
     private Button btnRegresar;
-
+    String sNumOrden;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,7 +28,7 @@ public class Info_recycler_cliente extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
 
-        String sNumOrden = bundle.get("orden").toString();
+        sNumOrden = bundle.get("orden").toString();
         String sEstado = bundle.get("estado").toString();
         String sFecha = bundle.get("fecha").toString();
         String sPrioridad = bundle.get("prioridad").toString();
@@ -74,5 +74,19 @@ public class Info_recycler_cliente extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+    public void clickBotonModificar(View v) {
+        Intent intent = new Intent(Info_recycler_cliente.this, Actualizar_Solicitud.class);
+        intent.putExtra("orden", sNumOrden);
+        intent.putExtra("fecha", txtFecha.getText().toString());
+        intent.putExtra("prioridad", txtPrioridad.getText().toString());
+        intent.putExtra("problema", txtProblema.getText().toString());
+        intent.putExtra("descripcion", txtDesc.getText().toString());
+        //  intent.putExtra("bitmap", bitmap);
+        //  intent.putExtra("bitmap2", sImagenINE);
+        startActivity(intent);
+        finish();
+
     }
 }

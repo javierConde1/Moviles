@@ -29,7 +29,7 @@ public class Estatus_cliente extends AppCompatActivity {
     private TextView txtPrueba;
     private Intent inMostrar;
     private Intent inSalir;
-    private String url = "http://javier-conde101.hostingerapp.com/Login.php";
+    private String url = "http://javier-conde101.hostingerapp.com/Login2.php";
           //  "https://javier-conde101.000webhostapp.com/Login.php";
     private RecyclerView mList;
     private DividerItemDecoration dividerItemDecoration;
@@ -57,6 +57,7 @@ public class Estatus_cliente extends AppCompatActivity {
                 intent.putExtra("sDesc",list.getsDesc());
 
                startActivity(intent);
+               finish();
             }
         });
         linearLayoutManager = new LinearLayoutManager(this);
@@ -70,6 +71,7 @@ public class Estatus_cliente extends AppCompatActivity {
         getData();
 
     }
+
     private void getData(){
         final ProgressDialog progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Cargando ...");
@@ -114,4 +116,6 @@ public class Estatus_cliente extends AppCompatActivity {
     public void Salir(View view) {
         finish();
     }
+
+
 }

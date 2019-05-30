@@ -36,6 +36,7 @@ public class Info_recycler_tecnico extends AppCompatActivity {
     private Button btnRegresar;
     ProgressDialog pDialog;
     StringRequest stringRequest;
+    String sNumOrden;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,7 +54,7 @@ public class Info_recycler_tecnico extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
 
-        String sNumOrden = bundle.get("orden").toString();
+         sNumOrden = bundle.get("orden").toString();
         String sFecha = bundle.get("fecha").toString();
         String sPrioridad = bundle.get("prioridad").toString();
         String sDomicilio = bundle.get("domicilio").toString();
@@ -94,7 +95,38 @@ public class Info_recycler_tecnico extends AppCompatActivity {
 
 
     public void Finalizar(View view) {
+        //Construir peticion HTTP
+        RequestQueue queue = Volley.newRequestQueue(Info_recycler_tecnico.this);
+        String url = "http://javier-conde101.hostingerapp.com/updateEstado.php";
 
+        StringRequest request = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+
+                Toast.makeText(Info_recycler_tecnico.this, "Actualizado con exito!", Toast.LENGTH_SHORT).show();
+                finish();
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+                Toast.makeText(Info_recycler_tecnico.this, "Error al actualizar", Toast.LENGTH_SHORT).show();
+            }
+        }) {
+            //Preparar datos enviados con POST al servidor
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> map = new HashMap<String, String>();
+                map.put("orden", sNumOrden );
+                map.put("estado", "finalizada");
+
+
+
+                return map;
+            }
+
+        };
+        queue.add(request);
+        //Se realiza la peticion HTTP
     }
 
 }

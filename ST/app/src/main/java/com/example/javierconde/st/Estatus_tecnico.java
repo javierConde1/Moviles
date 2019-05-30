@@ -57,6 +57,7 @@ public class Estatus_tecnico extends AppCompatActivity {
                 intent.putExtra("sdec", list.getsDesc());
                 intent.putExtra("cliente",list.getNo_cleinte());
                 startActivity(intent);
+                finish();
             }
         });
         linearLayoutManager = new LinearLayoutManager(this);
